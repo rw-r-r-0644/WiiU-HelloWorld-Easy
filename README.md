@@ -24,3 +24,4 @@ VPAD_BUTTON_PLUS, VPAD_BUTTON_MINUS, VPAD_BUTTON_HOME, VPAD_BUTTON_SYNC, VPAD_BU
 VPAD_BUTTON_STICK_L, VPAD_BUTTON_TV  
 ### Deinit functions  
 __uDeInit();__  
+Deinit Screen and Gamepad Input  
