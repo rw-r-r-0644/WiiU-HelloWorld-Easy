@@ -7,7 +7,7 @@ int Menu_Main(void) {
 		//<---put stuff that should run continuously before exiting here--->
 		
 
-		if(uGetPressedButtons() & VPAD_BUTTON_HOME) break; //Check if home is pressed
+		if(isPressed(VPAD_BUTTON_HOME)) break; //Check if home is pressed
 	}
 	uprintf("Exiting...");
 	uDeInit();
