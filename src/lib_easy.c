@@ -34,15 +34,15 @@ void uprintf(const char* format, ...) {
   }
   char buff[255];
   va_list argptr;
-	va_start(argptr, format);
-	vsnprintf(buff, 255, format, argptr);
-	va_end(argptr);
-	for(int i=0; i<2; i++) {	//Print on both Buffers
+  va_start(argptr, format);
+  vsnprintf(buff, 255, format, argptr);
+  va_end(argptr);
+  for(int i=0; i<2; i++) {	//Print on both Buffers
     OSScreenPutFontEx(0, 0, curr_line, buff);		//That is printed to TV
     OSScreenPutFontEx(1, 0, curr_line, buff);		//That is printed on GamePad
     flipBuffers();
   }
-	curr_line++;
+  curr_line++;
 }
 
 int isPressed(int button) {
