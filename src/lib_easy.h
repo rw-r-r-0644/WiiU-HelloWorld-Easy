@@ -8,8 +8,8 @@
  *
 */
 
-#ifndef EASYFUNCTIONS_H
-#define EASYFUNCTIONS_H
+#ifndef LIB_EASY_H
+#define LIB_EASY_H
 
 #include <stdio.h>
 #include <string.h>
@@ -49,4 +49,4 @@ int isPressed(int button);
 void uInit();
 void uDeInit();
 
-#endif
+#endif /* LIB_EASY_H */
