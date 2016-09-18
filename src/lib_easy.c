@@ -21,6 +21,7 @@ void ucls() {
     OSScreenClearBufferEx(1, 0);
     flipBuffers();
   }
+  curr_line=0;
 }
 
 void ScreenInit() {
