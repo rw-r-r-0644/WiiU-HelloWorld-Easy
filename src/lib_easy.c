@@ -45,13 +45,13 @@ void uprintf(const char* format, ...) {
   curr_line++;
 }
 
-int updatePressedButtons() {
+void updatePressedButtons() {
 	VPADRead(0, &vpad, 1, &vpadError);
 	buttons_hold = vpad.btns_h;
 }
 
 int isPressed(int button) {
-	if((buttons_hold&button) return 1;
+	if(buttons_hold&button) return 1;
 	else return 0;
 }
 
@@ -61,7 +61,7 @@ void uInit() {
   InitVPadFunctionPointers();		//For gamepad input
   memoryInitialize();				//You probably shouldn't care about this for now :P
   VPADInit();						//Init GamePad input library (needed for getting gamepad input)
-	ScreenInit();					//Init OSScreen (all the complex stuff is in easyfunctions.h :P )
+  ScreenInit();					//Init OSScreen (all the complex stuff is in easyfunctions.h :P )
 }
 
 void uDeInit() {
