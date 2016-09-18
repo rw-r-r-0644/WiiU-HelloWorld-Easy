@@ -4,11 +4,12 @@
 #include "common/common.h"
 #include "utils/utils.h"
 #include "main.h"
+#include "lib_easy.h"
 
 int __entry_menu(int argc, char **argv)
 {
-    //! *******************************************************************
-    //! *                 Jump to our application                    *
-    //! *******************************************************************
-    return Menu_Main();
+    uInit(); //Init all the wii u stuff
+    int ret=Menu_Main(); //Jump to out application
+    uDeInit();
+    return ret;
 }
