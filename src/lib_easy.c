@@ -45,9 +45,13 @@ void uprintf(const char* format, ...) {
   curr_line++;
 }
 
-int isPressed(int button) {
+int updatePressedButtons() {
 	VPADRead(0, &vpad, 1, &vpadError);
-	if(vpad.btns_h&button) return 1;
+	buttons_hold = vpad.btns_h;
+}
+
+int isPressed(int button) {
+	if((buttons_hold&button) return 1;
 	else return 0;
 }
 
