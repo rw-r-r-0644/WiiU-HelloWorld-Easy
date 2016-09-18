@@ -61,7 +61,7 @@ void uInit() {
 }
 
 void uDeInit() {
-	MEM1_free(screenBuffer);
-	screenBuffer = NULL;
-	memoryRelease();
+  MEM1_free(screenBuffer);
+  screenBuffer = NULL;
+  memoryRelease();
 }
