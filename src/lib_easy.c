@@ -1,3 +1,5 @@
+#include "lib_easy.h"
+
 void ucls() {
   OSScreenClearBufferEx(0, 0);
   OSScreenClearBufferEx(1, 0);
@@ -25,12 +27,10 @@ void flipBuffers() {
   OSScreenFlipBuffersEx(1);
 }
 
-int line;
-
 void uprintf(const char* format, ...) {
-  if(line==18) { //Out of gamepad screen
+  if(curr_line==18) { //Out of gamepad screen
     ucls(); //Clear Screen
-    line=0; //Reset line
+    curr_line=0; //Reset line
   }
   char buff[255];
   va_list argptr;
@@ -38,11 +38,11 @@ void uprintf(const char* format, ...) {
 	vsnprintf(buff, 255, format, argptr);
 	va_end(argptr);
 	for(int i=0; i<2; i++) {	//Print on both Buffers
-    OSScreenPutFontEx(0, 0, line, buff);		//That is printed to TV
-    OSScreenPutFontEx(1, 0, line, buff);		//That is printed on GamePad
+    OSScreenPutFontEx(0, 0, curr_line, buff);		//That is printed to TV
+    OSScreenPutFontEx(1, 0, curr_line, buff);		//That is printed on GamePad
     flipBuffers();
   }
-	line++;
+	curr_line++;
 }
 
 int isPressed(int button) {
