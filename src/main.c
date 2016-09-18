@@ -9,6 +9,6 @@ int Menu_Main(void) {
 		if(isPressed(VPAD_BUTTON_HOME)) break; //Check if home is pressed
 	}
 	uprintf("Exiting...");
-	return EXIT_SUCCESS;
+	return 0;
 }
 
