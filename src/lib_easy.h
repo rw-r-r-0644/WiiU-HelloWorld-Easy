@@ -44,6 +44,7 @@ void ucls();
 void ScreenInit();
 void flipBuffers();
 void uprintf(const char* format, ...);
+void updatePressedButtons();
 int isPressed(int button);
 void uInit();
 void uDeInit();
