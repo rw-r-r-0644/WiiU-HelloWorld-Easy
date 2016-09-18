@@ -14,8 +14,10 @@ Clear screen
 __uprintf(format, ...);__  
 Same as printf()  
 ### Input functions  
+__updatePressedButtons();__
+Updates buttons state
 __isPressed(int button);__  
-Returns 1 is button is pressed an 0 if button isn't pressed
+Returns 1 if button is pressed an 0 if button isn't pressed
 example: "if(isPressed(VPAD_BUTTON_HOME)) doSomething();"  
 Other than VPAD_BUTTON_HOME, possible values are:  
 VPAD_BUTTON_A, VPAD_BUTTON_B, VPAD_BUTTON_X, VPAD_BUTTON_Y, VPAD_BUTTON_LEFT, VPAD_BUTTON_RIGHT,  
