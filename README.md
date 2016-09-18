@@ -3,16 +3,16 @@ The Easiest Wii U Homebrew Example™
   
 A very easy example for people that want to start with wii u homebrew  
   
-### lib_easy functions  
-#### Init functions  
+## lib_easy functions  
+### Init functions  
 __uInit();__  
 Init Screen and Gamepad Input  
-#### Screen functions  
+### Screen functions  
 __ucls();__  
 Clear screen  
 __uprintf(format, ...);__  
 Same as printf()  
-#### Input functions  
+### Input functions  
 __uGetPressedButtons();__  
 Returns pressed buttons  
 example: "if(uGetPressedButtons() & VPAD_BUTTON_HOME) doSomething();"  
