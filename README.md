@@ -16,6 +16,7 @@ Same as printf()
 ### Input functions  
 __updatePressedButtons();__  
 Updates buttons state  
+  
 __isPressed(int button);__  
 Returns 1 if button is pressed an 0 if button isn't pressed
 example: "if(isPressed(VPAD_BUTTON_HOME)) doSomething();"  
