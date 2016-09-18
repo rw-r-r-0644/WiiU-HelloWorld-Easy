@@ -31,11 +31,7 @@
 #include "utils/utils.h"
 #include "common/common.h"
 
-int vpadError = -1;
-VPADData vpad;
 
-int screen_buf0_size = 0;
-int screen_buf1_size = 0;
 unsigned char *screenBuffer;
 int curr_line; //Current print line
 uint32_t buttons_hold; //Held buttons
