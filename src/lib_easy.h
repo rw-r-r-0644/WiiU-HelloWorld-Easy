@@ -84,9 +84,10 @@ void uprintf(const char* format, ...) {
 	line++;
 	
 }
-uint32_t uGetPressedButtons() {
+int isPressed(int button) {
 	VPADRead(0, &vpad, 1, &vpadError);
-	return vpad.btns_h;
+	if(vpad.btns_h&button) return 1;
+	else return 0;
 }
 
 void uInit() {
