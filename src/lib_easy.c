@@ -62,9 +62,20 @@ int isPressed(int button) {
 }
 
 void uInit() {
-	//--Initialize function pointers--
-  InitOSFunctionPointers();		//Coreinit functions.
-  InitVPadFunctionPointers();		//For gamepad input
+  //--Initialize every function pointer-- (byebye FindExport :D)
+  InitACPFunctionPointers();
+  InitAocFunctionPointers();
+  InitAXFunctionPointers();
+  InitCurlFunctionPointers();
+  InitFSFunctionPointers();
+  InitGX2FunctionPointers();
+  InitOSFunctionPointers();
+  InitPadScoreFunctionPointers();
+  InitSocketFunctionPointers();
+  InitSysFunctionPointers();
+  InitSysHIDFunctionPointers();
+  InitVPadFunctionPointers();
+
   memoryInitialize();				//You probably shouldn't care about this for now :P
   VPADInit();						//Init GamePad input library (needed for getting gamepad input)
   ScreenInit();					//Init OSScreen (all the complex stuff is in easyfunctions.h :P )
