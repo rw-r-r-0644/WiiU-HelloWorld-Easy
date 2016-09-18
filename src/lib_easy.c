@@ -63,15 +63,15 @@ int isPressed(int button) {
 
 void uInit() {
   //--Initialize every function pointer-- (byebye FindExport :D)
+  InitOSFunctionPointers();
+  InitSocketFunctionPointers();
   InitACPFunctionPointers();
   InitAocFunctionPointers();
   InitAXFunctionPointers();
   InitCurlFunctionPointers();
   InitFSFunctionPointers();
   InitGX2FunctionPointers();
-  InitOSFunctionPointers();
   InitPadScoreFunctionPointers();
-  InitSocketFunctionPointers();
   InitSysFunctionPointers();
   InitSysHIDFunctionPointers();
   InitVPadFunctionPointers();
