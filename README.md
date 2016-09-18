@@ -10,6 +10,7 @@ Init Screen and Gamepad Input
 ### Screen functions  
 __ucls();__  
 Clear screen  
+  
 __uprintf(format, ...);__  
 Same as printf()  
 ### Input functions  
