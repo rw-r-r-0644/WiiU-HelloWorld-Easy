@@ -1,5 +1,11 @@
 #include "lib_easy.h"
 
+int vpadError = -1;
+VPADData vpad;
+
+int screen_buf0_size = 0;
+int screen_buf1_size = 0;
+
 void ucls() {
   OSScreenClearBufferEx(0, 0);
   OSScreenClearBufferEx(1, 0);
