@@ -9,7 +9,7 @@
 int __entry_menu(int argc, char **argv)
 {
     uInit(); //Init all the wii u stuff
-    int ret=Menu_Main(); //Jump to out application
+    int ret=Menu_Main(); //Jump to our application
     uDeInit();
     return ret;
 }
