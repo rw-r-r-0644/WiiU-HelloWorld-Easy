@@ -6,9 +6,21 @@ VPADData vpad;
 int screen_buf0_size = 0;
 int screen_buf1_size = 0;
 
+void flipBuffers() {
+  // Flush the cache
+  DCFlushRange(screenBuffer, screen_buf0_size);
+  DCFlushRange((screenBuffer + screen_buf0_size), screen_buf1_size);
+  // Flip buffers
+  OSScreenFlipBuffersEx(0);
+  OSScreenFlipBuffersEx(1);
+}
+
 void ucls() {
-  OSScreenClearBufferEx(0, 0);
-  OSScreenClearBufferEx(1, 0);
+  for(int i=0;i<2;i++) {
+    OSScreenClearBufferEx(0, 0);
+    OSScreenClearBufferEx(1, 0);
+    flipBuffers();
+  }
 }
 
 void ScreenInit() {
@@ -22,15 +34,6 @@ void ScreenInit() {
   OSScreenEnableEx(0, 1);
   OSScreenEnableEx(1, 1);
   ucls(); //Clear screens
-}
-
-void flipBuffers() {
-  // Flush the cache
-  DCFlushRange(screenBuffer, screen_buf0_size);
-  DCFlushRange((screenBuffer + screen_buf0_size), screen_buf1_size);
-  // Flip buffers
-  OSScreenFlipBuffersEx(0);
-  OSScreenFlipBuffersEx(1);
 }
 
 void uprintf(const char* format, ...) {
