@@ -1,5 +1,6 @@
 #include "lib_easy.h"
 
+
 int vpadError = -1;
 VPADData vpad;
 
@@ -38,21 +39,39 @@ void ScreenInit() {
 }
 
 void uprintf(const char* format, ...) {
-  if(curr_line==18) { //Out of gamepad screen
-    ucls(); //Clear Screen
-    curr_line=0; //Reset line
-  }
   char buff[255];
   va_list argptr;
   va_start(argptr, format);
   vsnprintf(buff, 255, format, argptr);
   va_end(argptr);
+  char tmp_c[1]; //Just because OSScreenPutFontEx only accept char* :P (todo: find a better solution)
+  int curr_x;
+  int curr_line_tmp;
   for(int i=0; i<2; i++) {	//Print on both Buffers
-    OSScreenPutFontEx(0, 0, curr_line, buff);		//That is printed to TV
-    OSScreenPutFontEx(1, 0, curr_line, buff);		//That is printed on GamePad
+    curr_line_tmp=curr_line;
+    curr_x=0;
+    for(size_t ii=0; ii<strlen(buff); ii++) {
+      if(buff[ii]!='\n') { //HACKY! Check for carrige returns 
+        tmp_c[0]=buff[ii];
+        OSScreenPutFontEx(0, curr_x, curr_line_tmp, tmp_c);  //That is printed to TV
+        OSScreenPutFontEx(1, curr_x, curr_line_tmp, tmp_c);  //That is printed on GamePad
+        curr_x++; //Next char
+      } else {
+        curr_x=0;
+        curr_line_tmp++;
+        if(curr_line_tmp==19) { //Out of gamepad screen
+          ucls(); //Clear Screen
+          curr_line_tmp=0; //Reset curr_line
+        }
+      }
+    }
     flipBuffers();
   }
-  curr_line++;
+  curr_line=curr_line_tmp;
+}
+
+int64_t uGetTime() {
+	return OSGetTime()/SECS_TO_TICKS(1);
 }
 
 void updatePressedButtons() {
@@ -90,3 +109,4 @@ void uDeInit() {
   screenBuffer = NULL;
   memoryRelease();
 }
+
