@@ -14,7 +14,7 @@ Clear screen
 __uprintf(format, ...);__  
 Same as printf()  
 ### Various functions  
-int64_t uGetTime();  
+__int64_t uGetTime();__  
 Returns number of seconds from 1/1/1970 to current second (Hmm, not exactly the easiest measure unit...)  
 ### Input functions  
 __updatePressedButtons();__  
