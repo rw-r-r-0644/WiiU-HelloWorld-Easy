@@ -13,9 +13,6 @@ Clear screen
   
 __uprintf(format, ...);__  
 Same as printf()  
-### Various functions  
-__int64_t uGetTime();__  
-Returns number of seconds from 1/1/1970 to current second (Hmm, not exactly the easiest measure unit...)  
 ### Input functions  
 __updatePressedButtons();__  
 Updates buttons state  
@@ -31,3 +28,6 @@ VPAD_BUTTON_STICK_L, VPAD_BUTTON_TV
 ### Deinit functions  
 __uDeInit();__  
 Deinit Screen and Gamepad Input  
+### Various functions  
+__int64_t uGetTime();__  
+Returns number of seconds from 1/1/1970 to current second (Hmm, not exactly the easiest measure unit...)  
