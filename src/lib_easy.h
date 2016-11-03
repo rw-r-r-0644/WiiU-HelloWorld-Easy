@@ -40,6 +40,7 @@
 
 unsigned char *screenBuffer;
 int curr_line; //Current print line
+int curr_column; //Current print column
 uint32_t buttons_hold; //Held buttons
 
 void ucls();
