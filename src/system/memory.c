@@ -50,7 +50,7 @@ extern void (* MEMFreeToExpHeap)(int heap, void* ptr);
 static int mem1_heap = -1;
 static int bucket_heap = -1;
 
-void memoryInitialize(void)
+void memory_init(void)
 {
     int mem1_heap_handle = MEMGetBaseHeapHandle(MEMORY_ARENA_1);
     unsigned int mem1_allocatable_size = MEMGetAllocatableSizeForFrmHeapEx(mem1_heap_handle, 4);
@@ -65,7 +65,7 @@ void memoryInitialize(void)
         bucket_heap = MEMCreateExpHeapEx(bucket_memory, bucket_allocatable_size, 0);
 }
 
-void memoryRelease(void)
+void memory_end(void)
 {
     MEMDestroyExpHeap(mem1_heap);
     MEMFreeToFrmHeap(MEMGetBaseHeapHandle(MEMORY_ARENA_1), 3);

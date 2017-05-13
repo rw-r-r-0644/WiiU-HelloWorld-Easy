@@ -35,6 +35,8 @@ SOURCES		:=	src \
 				src/dynamic_libs \
 				src/fs \
 				src/system \
+				src/screen \
+				src/easy \
 				src/utils
 DATA		:=	
 
